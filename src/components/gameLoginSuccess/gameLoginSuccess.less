@@ -1,0 +1,55 @@
+@import '@/assets/less/global.less';
+@media (min-width:@screen-xs-min) {
+  @import './media.less';
+}
+@heightAnimalImg:100px;
+@widthBlackboard:285px;
+@heightBlackboard:100px;
+.img-animal{
+  height:@heightAnimalImg;
+  font-size:0;
+  margin-bottom: -20px;
+  margin-top:10px;
+  z-index: 1;
+  position: relative;
+}
+.info{
+  position: relative;
+  width:@widthBlackboard;
+  height:@heightBlackboard;
+  margin:0 auto;
+  background: url(@/assets/images/blackboard.png) no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  img{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    left:0;
+  }
+  .info-title{
+    display: block;
+    height: 13px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 13px;
+    margin-top: 30px;
+  }
+  .info-email{
+    height: 26px;
+    font-size: 22px;
+    font-family: DINAlternate-Bold, DINAlternate;
+    font-weight: bold;
+    color: #FDD9C2;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+}

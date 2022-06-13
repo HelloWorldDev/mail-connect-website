@@ -1,0 +1,82 @@
+
+@import '@/assets/less/global.less';
+@media (min-width:@screen-xs-min) {
+  @import './media.less';
+}
+@inputRegionWidth:285px;
+@inputHeight:50px;
+@marginInputbot:30px;
+.inputpart{
+  width: 100%;
+  height:@inputHeight;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  padding-left: 15px;
+  font-size: 16px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+input::placeholder{
+  font-size: 16px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.25);
+  line-height: 22px;
+}
+.username-region{
+  position: relative;
+  width: @inputRegionWidth;
+  margin:0 auto;
+  margin-top:30px; 
+  margin-bottom:@marginInputbot;
+  .inputpart{
+    padding-right:126px;
+  }
+  .tempart{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    display: block;
+    font-size: 14px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #000000;
+    padding:6px 12px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .message{
+    position: absolute;
+    left:15px;
+    top:100% + 5px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FF3126;
+  }
+}
+.surePassword-region,
+.password-region{
+  position: relative;
+  width: @inputRegionWidth;
+  margin:0 auto;
+  margin-bottom:@marginInputbot;
+  .inputpart{
+    padding-right:44px;
+  }
+  img{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    height:24px;
+    transform: translateY(-50%);
+  }
+}
+.inputpart{
+  &:focus{
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    border: 1px solid #000000;
+  }
+}

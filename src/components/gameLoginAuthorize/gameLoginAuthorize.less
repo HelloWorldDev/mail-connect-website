@@ -1,0 +1,61 @@
+
+@import '@/assets/less/global.less';
+@media (min-width:@screen-xs-min) {
+  @import './media.less';
+}
+.content{
+  padding:20px;
+  padding-bottom: 0;
+  .top{
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #000000;
+    line-height: 18px;
+    text-align: left;
+    margin-bottom: 20px;
+    span{
+      color:#4E4DFF;
+    }
+  }
+  .mid{
+    display: flex;
+    margin-bottom: 20px;
+    img{
+      height:80px;
+      width:80px;
+    }
+    .mid-introduct{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-left:15px;
+      :first-child{
+        font-size: 14px;
+        font-family: PingFangSC-Semibold, PingFang SC;
+        font-weight: 600;
+        color: #000000;
+        line-height: 18px;
+        margin-bottom: 5px;
+      }
+      :last-child{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #000000;
+        line-height: 17px;
+      }
+    }
+  }
+  .bot{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 285px;
+    font-size: 14px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #000000;
+    line-height: 20px;
+  }
+}
