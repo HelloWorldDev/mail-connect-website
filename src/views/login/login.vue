@@ -18,7 +18,6 @@ import gameLoginAuthorize from '@/components/gameLoginAuthorize/gameLoginAuthori
 import close from "@/assets/images/close.png"
 
 import {connectRequest} from "@/api/serviceLogin"
-
 export default {
   name: 'login',
   data () {
@@ -29,6 +28,7 @@ export default {
       3:{"title":"Game.com开放世界！","name":'gameLoginAuthorize'},
     }
     return{
+      currentRate: 0,
       close:close,
       statusMap:statusMap,//json对象
       status:1,//就是statusMap的key，通过这个key表示slot中是否显示footer部分的提示
@@ -36,6 +36,11 @@ export default {
       dialogOption:{"title":"","status":""},//类似dialog这个组件的title标题和status
       contentOption:{}//内容区域的所有组件都使用这一个对象，挑选自己需要的属性
     }
+  },
+   computed: {
+    text() {
+      return this.currentRate.toFixed(0) + '%';
+    },
   },
   components: {
     gameLoginContent,

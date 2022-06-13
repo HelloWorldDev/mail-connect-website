@@ -13,6 +13,32 @@ module.exports = defineConfig({
     sourceMap: false, // 是否在构建样式地图，false将提高构建速度
     loaderOptions: {} // css预设器配置项
   },
+  configureWebpack: config => {
+      if (process.env.NODE_ENV === 'production') {
+        // 为生产环境修改配置...
+          //externals里的模块不打包
+          Object.assign(config, {
+            externals: {
+              'vue': 'Vue',
+              'vuex': 'Vuex',
+              'axios': 'axios',
+              'vue-router': 'VueRouter',
+          }
+          })
+      } else {
+        // 为开发环境修改配置...暂时不需要
+      }
+  },
+  chainWebpack: config => {
+      if (process.env.NODE_ENV === 'production') {
+          // 生产环境下注入一个变量cdn 变量可以在html中通过htmlWebpackPlugin.options进行获取 
+          config.plugin('html')
+              .tap(args => {
+                  args[0].cdn = 'prod';
+                  return args;
+              })
+      }
+  },
   devServer: {
     proxy: {
       '/gsp': {
