@@ -1,6 +1,6 @@
 
 @import '@/assets/less/global.less';
-@media (min-width:@screen-xs-min) {
+@media (min-width:@screen-md-min) {
   @import './media.less';
 }
 @inputRegionWidth:285px;
@@ -35,7 +35,8 @@ input::placeholder{
   .tempart{
     position: absolute;
     right: 10px;
-    top:10px;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
     font-size: 14px;
     font-family: PingFangSC-Semibold, PingFang SC;

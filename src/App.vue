@@ -6,8 +6,8 @@
 
 <style lang="less">
 @import '@/assets/less/global.less';
-//在这里控制rem基准值，在大于@screen-xs-min得时候设置基准值不变，防止一直放大
-@media (min-width:@screen-xs-min) {
+//在这里控制rem基准值，切换到pc端得时候设置基准值不变
+@media (min-width:@screen-md-min) {
   html{
     font-size: 37.5px!important;
   }
@@ -18,5 +18,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color:rgba(0, 0, 0, 0.75);
 }
 </style>
