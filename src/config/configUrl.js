@@ -7,17 +7,17 @@ const modeUrlObj = {
     },
     //测试环境
     'test': {
-      base_url: 'http://test1:9991', 
+      base_url: 'https://test1:9991', 
       node_env:'test'
     },
     //灰度环境
     'pre': {
-      base_url: 'http://pre1:9991', 
+      base_url: 'https://pre1:9991', 
       node_env:'pre'
     },
     // 本地环境
     'dev': {
-      base_url: 'http://dev1:9991', 
+      base_url: 'https://dev1:9991', 
       node_env:'dev'
     },
 }
