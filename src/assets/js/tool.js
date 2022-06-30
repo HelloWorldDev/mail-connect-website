@@ -19,7 +19,8 @@ export function dateFtt(fmt,date)
  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length))); 
  return fmt; 
 }
-//loading
+
+//Toast提示遮罩
 export function toast(msg,type){
     return Toast.loading({
       message: msg,
