@@ -1,37 +1,31 @@
 import axios from 'axios'
-// import { Loading,Message } from "element-ui";
-let preventRepeatLocation = true; // 预防一个页面，并发多个请求，多次跳往登录页。记录状态用
+import {toast} from '@/assets/js/tool'
+let requestTimes = 0; // 记录请求次数
 //封装Request方法
-export function request(params){
+export function request(params,showType=true){
+	if(showType){
+		var toast1=toast('加载中...','loading');
+	}
 	return new Promise(function (resolve,reject){
-		// const {...rest} = params.data;
-		// let loadingInstance = Loading.service({
-		// 	fullscreen: true,
-		// 	background: "rgba(25,25,25,0.5)"
-		// });
+		requestTimes++
 		axios({
 			method: params.methods,
 			url: params.url,
-			headers: {
-				"Content-type": params.ContentType?params.ContentType:'application/json'
-			},
+			headers:{"Content-type": params.ContentType?params.ContentType:'application/json'},
 			responseType:params.responseType,
 			data: params.data
 		}).then(res => {
-			// loadingInstance.close();
-			// if(preventRepeatLocation && res.status == '200'){
-			// 	if(res.data.code == '401'){
-			// 		document.location.href = '#/login';
-			// 	}else{
-					resolve(res.data)
-			// 	}
-			// }
+			if(res.status == '200'){
+				resolve(res.data)
+			}
 		}).catch(err => {
-			// loadingInstance.close();
-			// Message({
-			// 	message: err
-			// });
+			toast(err.message,'fail');
 			reject(err)
+		}).finally(()=>{
+			requestTimes--
+			if(requestTimes == 0){
+				toast1.clear();
+			}
 		})
 	})
 }

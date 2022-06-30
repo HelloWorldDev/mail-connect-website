@@ -9,6 +9,7 @@ const config = {}
 // console.log(process.env.VUE_APP_BASE_URL)
 // 3.VUE_APP_XXX作为modeUrlObj对象得key
 config.BASE_ONE = configUrl.base_url
-console.log(configUrl.base_url)
+console.log('base_url:',configUrl.base_url)
+console.log('node_env:',configUrl.node_env)
 
 export default config

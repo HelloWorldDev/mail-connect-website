@@ -47,7 +47,7 @@ export default {
     gameLoginImage,
     gameLoginRegister,
     gameLoginSuccess,
-    gameLoginAuthorize
+    gameLoginAuthorize,
   },
   created(){
     this.inintData()

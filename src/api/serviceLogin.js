@@ -3,7 +3,7 @@ import config from '@/config/config.js'
 
 export function connectRequest(data){ 
 	return request({
-		url: config.BASE_ONE + '/vipStoreOrder/insert',
+		url: config.BASE_ONE + '/supe/list',
 		methods: 'get',
 		data
 	}).then(res => res) 

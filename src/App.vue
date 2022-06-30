@@ -13,7 +13,7 @@
   }
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: PingFang SC,Hiragino Sans GB,Heiti SC,Microsoft YaHei,WenQuanYi Micro Hei,Helvetica,Arial,monospace,serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
